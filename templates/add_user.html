@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Добавить пользовареля</title>
+    <link rel="stylesheet" href="/static/index.css" >
+    <link rel="stylesheet" href="/static/add_user.css" >
+</head>
+<body>
+
+<header class = "header-main">
+    <div class = "logo">
+        База пользователей
+    </div>
+    <nav class = "nav-horizontal">
+        <ul class = "nav-bar">
+            <li><a class = "nav" href="/">Все пользователи</a></li>
+            <li><a class = "nav" href="/search/">Поиск</a></li>
+            <li><a class = "nav nav-active" href="/add_user/">Добавить</a></li>
+        </ul>
+    </nav>
+</header>
+<h1>Добавить пользовареля</h1>
+<form method="post">
+    <div class="form-block">
+        <input type="text" name="name">
+        <input type="text" name="age">
+        <input type="checkbox" name="is_blocked">Заблокирован
+        <input type="date" name="unblock_date">
+        <input type="submit">
+    </div>
+</form>
+<p>{{ message }}</p>
+
+</body>
+</html>
+

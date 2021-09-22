@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Поиск</title>
+    <link rel="stylesheet" href="/static/index.css" >
+    <link rel="stylesheet" href="/static/search.css" >
+</head>
+<body>
+
+<header class = "header-main">
+    <div class = "logo">
+        База пользователей
+    </div>
+    <nav class = "nav-horizontal">
+        <ul class = "nav-bar">
+            <li><a class = "nav" href="/">Все пользователи</a></li>
+            <li><a class = "nav nav-active" href="/search/">Поиск</a></li>
+            <li><a class = "nav" href="/add_user/">Добавить</a></li>
+        </ul>
+    </nav>
+</header>
+<h1>Поиск</h1>
+<form method="get">
+    <div class="form-block">
+        <input type="text" name="name">
+        <input type="submit">
+    </div>
+</form>
+<h3>Найдено: {{ found }}</h3>
+{% for user in users %}
+<div class = "line">
+    <span class="user-name">{{ user['name'] }}</span>,
+    {{ user['age'] }},
+    {{ 'заблокирован, разблокируется ' + user['unblock_date'] if user['is_blocked'] }}
+</div>
+{% endfor %}
+</body>
+</html>

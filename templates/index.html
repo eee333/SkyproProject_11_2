@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Все пользователи</title>
+    <link rel="stylesheet" href="/static/index.css" >
+</head>
+<body>
+<header class = "header-main">
+    <div class = "logo">
+        База пользователей
+    </div>
+    <nav class = "nav-horizontal">
+        <ul class = "nav-bar">
+            <li><a class = "nav nav-active" href="/">Все пользователи</a></li>
+            <li><a class = "nav" href="/search/">Поиск</a></li>
+            <li><a class = "nav" href="/add_user/">Добавить</a></li>
+        </ul>
+    </nav>
+</header>
+<h1>Пользователи</h1>
+{% for user in users %}
+<div class = "line">
+    <span class="user-name">{{ user['name'] }}</span>,
+    {{ user['age'] }},
+    {{ 'заблокирован, разблокируется ' + user['unblock_date'] if user['is_blocked'] }}
+</div>
+{% endfor %}
+
+</body>
+</html>

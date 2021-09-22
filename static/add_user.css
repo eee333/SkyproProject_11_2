@@ -1,0 +1,12 @@
+.form-block{
+    background-color: lightgray;
+    display: flex;
+    align-items: center;
+    border-radius: 3px;
+}
+input{
+    margin: 12px;
+    padding: 6px;
+    border-radius: 3px;
+    border-width: 1px;
+}
